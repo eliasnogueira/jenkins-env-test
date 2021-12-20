@@ -1,18 +1,22 @@
 package jenkins;
 
+import org.apache.log4j.Logger;
+
 public class Exec {
+
+    final static Logger logger = Logger.getLogger(Exec.class);
 
     public static void main(String[] args) {
         String userEnv = System.getenv("BECK_USERNAME");
-        String pwdEnd = System.getenv("BECK_USERNAME");
+        String pwdEnd = System.getenv("BECK_PASSWORD");
 
         String userProperty = System.getProperty("BECK_USERNAME");
-        String pwdProperty = System.getProperty("BECK_USERNAME");
+        String pwdProperty = System.getProperty("BECK_PASSWORD");
 
-        System.out.println("userEnv = " + userEnv);
-        System.out.println("pwdEnd = " + pwdEnd);
+        logger.info("userEnv = " + userEnv);
+        logger.info("pwdEnd = " + pwdEnd);
 
-        System.out.println("userProperty = " + userProperty);
-        System.out.println("userProperty = " + pwdProperty);
+        logger.info("userProperty = " + userProperty);
+        logger.info("userProperty = " + pwdProperty);
     }
 }
